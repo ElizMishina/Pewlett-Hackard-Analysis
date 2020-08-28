@@ -35,9 +35,9 @@ create table salaries (
 	primary key (emp_no)
 );
 
-create table dept_employees (
-	emp_no varchar not null,
-	dept_no int not null,
+create table dept_emp (
+	emp_no int not null,
+	dept_no varchar not null,
 	from_date date not null,
 	to_date date not null,
 	foreign key (emp_no) references employees (emp_no),
@@ -46,11 +46,10 @@ create table dept_employees (
 );
 
 create table titles(
-	emp_no varchar not null,
+	emp_no int not null,
 	title varchar not null,
 	from_date date not null,
 	tp_date date not null,
-	foreign key (emp_no) references employees (emp_no),
-	primary Key (emp_no)
+	foreign key (emp_no) references employees (emp_no)
 );
 
