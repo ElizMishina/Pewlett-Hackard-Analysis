@@ -11,14 +11,14 @@ create table employees (
 	birth_date date not null,
 	first_name varchar not null,
 	last_name varchar not null,
-	gneder varchar not null,
+	gender varchar not null,
 	hire_date date not null,
 	primary key (emp_no)
 );
 
 create table dept_manager (
 	dept_no varchar not null,
-	emp_no varchar not null,
+	emp_no int not null,
 	from_date varchar not null,
 	to_date varchar not null,
 	foreign key (emp_no) references employees (emp_no),
@@ -27,10 +27,10 @@ create table dept_manager (
 );
 
 create table salaries (
-	emp_no varchar not null,
+	emp_no int not null,
 	salary float not null,
 	from_date date not null,
-	tp_date date not null,
+	to_date date not null,
 	foreign key (emp_no) references employees (emp_no),
 	primary key (emp_no)
 );
@@ -52,4 +52,3 @@ create table titles(
 	tp_date date not null,
 	foreign key (emp_no) references employees (emp_no)
 );
-
